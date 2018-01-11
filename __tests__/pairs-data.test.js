@@ -15,7 +15,7 @@ describe('Data', () => {
 		const testlist3 = consPair(4, consPair(3, consPair(2, consPair(1, consPair(null, null)))));
 		expect(listToString(testlist1)).toBe('()');
 		expect(listToString(testlist2)).toBe('(1)');
-		expect(listToString(testlist3)).toBe('(4, 3, 2, 1)');
+		expect(listToString(testlist3)).toBe('(1, 2, 3, 4)');
 	});
 
 	it('#l', () => {

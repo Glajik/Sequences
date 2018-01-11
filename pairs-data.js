@@ -73,10 +73,12 @@ export const tail = (list) => {
 export const isEmpty = list => car(list) === null && cdr(list) === null ? true : false;
 
 export const toString = (list) => {
-	const iter = (acc, myList) => {
-		if (isEmpty(myList)) return acc + ')';
-		if (acc === '(') return iter(acc + head(myList), tail(myList));
-		return iter(acc + ', ' + head(myList), tail(myList));
+	const recc = (myList) => {
+		if (isEmpty(myList)) return '(';
+		else {
+			const comma = isEmpty(tail(myList)) ? '' : ', ';
+			return recc(tail(myList)) + comma + head(myList);
 		}
-	return iter('(', list);
+	}
+	return recc(list) + ')';
 };
