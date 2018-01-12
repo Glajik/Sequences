@@ -1,5 +1,5 @@
 import { car, cdr, cons as consPair } from '../pairs'; // eslint-disable-line
-import { l, toString as listToString, isEmpty, isEqual } from '../pairs-data'; // eslint-disable-line
+import { l, toString as listToString, isEmpty, isEqual, head, tail } from '../pairs-data'; // eslint-disable-line
 
 describe('Data', () => {
 	it('#isEmpty', () => {
@@ -12,7 +12,7 @@ describe('Data', () => {
 	it('#listToString', () => {
 		const testlist1 = consPair(null, null);
 		const testlist2 = consPair(1, consPair(null, null));
-		const testlist3 = consPair(4, consPair(3, consPair(2, consPair(1, consPair(null, null)))));
+		const testlist3 = consPair(1, consPair(2, consPair(3, consPair(4, consPair(null, null)))));
 		expect(listToString(testlist1)).toBe('()');
 		expect(listToString(testlist2)).toBe('(1)');
 		expect(listToString(testlist3)).toBe('(1, 2, 3, 4)');
@@ -20,11 +20,20 @@ describe('Data', () => {
 
 	it('#l', () => {
 		const pair0 = consPair(null, null);
-		const pair1 = consPair(1, pair0);
-		const pair2 = consPair(2, pair1);
-		const pair3 = consPair(3, pair2);
-		const pair4 = consPair(4, pair3);
+		const pair1 = consPair(4, pair0);
+		const pair2 = consPair(3, pair1);
+		const pair3 = consPair(2, pair2);
+		const pair4 = consPair(1, pair3);
 		const testlist = l(1, 2, 3, 4);
 		expect(listToString(pair4) === listToString(testlist)).toBe(true);
+	});
+
+	it('#head-tail', () => {
+		const testlist = l(1, 2, 3, 4);
+		expect(head(testlist)).toBe(1);
+		expect(tail(head(testlist))).toBe(2);
+		expect(tail(tail(head(testlist)))).toBe(3);
+		expect(tail(tail(tail(head(testlist))))).toBe(4);
+		expect(tail(tail(tail(tail(head(testlist)))))).toBe(undefined);
 	});
 });

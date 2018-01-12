@@ -25,7 +25,7 @@ export const reverse = (list) => {
 
   // itterative call
   if(!isEmpty(list)) return iter(list, l());
-  else return null;
+  else return l();
 
 }
 
@@ -33,7 +33,7 @@ export const concat = (list1, list2) => {
     if (isEmpty(list1)) return list2;
     if (isEmpty(list2)) return list1;
     if (isEmpty(list1) && isEmpty(list2)) return l(); 
-
+		console.log(listToString(list1));
 
     if (isEmpty(tail(list1))) return cons(head(list1), list2);
     else return cons(head(list1), concat(tail(list1), list2));
