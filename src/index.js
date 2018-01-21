@@ -1,4 +1,5 @@
-import game from './game';
+import { l, toString as listToString, isEmpty, isEqual, head, tail } from './pairs-data'; // eslint-disable-line
 
-export default game;
+const list = l(1,2,3,4,5);
+
 
