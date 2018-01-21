@@ -1,5 +1,5 @@
-import { car, cdr, cons as consPair } from '../pairs'; // eslint-disable-line
-import { l, toString as listToString, isEmpty, isEqual, head, tail, cons } from '../pairs-data'; // eslint-disable-line
+import { car, cdr, cons as consPair } from '../src/pairs'; // eslint-disable-line
+import { l, toString as listToString, isEmpty, isEqual, head, tail, cons } from '../src/pairs-data'; // eslint-disable-line
 
 describe('Data', () => {
 
