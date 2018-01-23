@@ -57,3 +57,22 @@ export const random = (list) => {
 	const index = Math.round(Math.random() * (count - 1));
 	return get(index, list);;
 };
+
+export const filter = (f, list) => {
+  const iter = (oldlist, newlist) => {
+    if (isEmpty(oldlist)) return newlist;
+    
+    if (f(head(oldlist))) return iter(tail(oldlist), cons(head(oldlist), newlist));
+    else return iter(tail(oldlist), newlist);
+  };
+  
+  return reverse(iter(list, make()));
+};
+
+export const reduce = (func, acc, items) => {
+  if (isEmpty(items)) return acc;
+
+  const newAcc = func(head(items), acc);
+  return reduce(func, newAcc, tail(items));
+};
+

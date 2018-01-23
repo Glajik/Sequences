@@ -1,6 +1,6 @@
 //import { car, cdr, cons as consPair } from '../src/pairs'; // eslint-disable-line
 import { l, toString as listToString } from '../src/pairs-data'; // eslint-disable-line
-import { has, reverse, concat, length, get, random } from '../src/list';
+import { has, reverse, concat, length, get, random } from '../src/lists';
 
 describe('Data', () => {
 	it('#has', () => {

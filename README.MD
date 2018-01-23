@@ -162,7 +162,24 @@ Randomize elements of list and return it as new list
 ```
 ```
 
-## reduce - not yet
+## map - not yet
+
+## filter - not tested
+
+Filter list
+
+*Parameters*
+
++ func: function (value: U): boolean
++ list: List<U>
+
+*Examples*
+```
+const numbers = l(3, 4, 5, 8);
+filter(n => n % 2 === 0, numbers); // (4, 8)
+```
+
+## reduce - not tested
 
 Reduce list
 
