@@ -1,6 +1,7 @@
 # My implementation for Hexlet pair and list functions
-It's training project on ES-2016, which I made by [Hexlet](https://ru.hexlet.io/?ref=161019)
 Demonstrates growing abstarction layers from pair to lists.
+
+It's training project on ES-2016, which I made by [Hexlet](https://ru.hexlet.io/?ref=161019) cources.
 All right reserved by Hexlet(c)
 
 ## l
