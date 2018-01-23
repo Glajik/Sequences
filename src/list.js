@@ -1,12 +1,12 @@
 // eslint-disable-next-line
 import { l, cons, head, tail, isEmpty, toString as listToString } from './pairs-data';
 
-export const has = (list, value) => {
+export const has = (list, element) => {
   // terminate condition
   if (isEmpty(list)) return false;
   // recursive call
-  if (head(list) === value) return true;
-  else return has(tail(list), value);
+  if (head(list) === element) return true;
+  else return has(tail(list), element);
 
   return null;
 };
