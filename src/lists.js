@@ -66,7 +66,7 @@ export const filter = (f, list) => {
     else return iter(tail(oldlist), newlist);
   };
   
-  return reverse(iter(list, make()));
+  return reverse(iter(list, l()));
 };
 
 export const reduce = (func, acc, items) => {

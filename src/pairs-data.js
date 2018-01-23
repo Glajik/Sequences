@@ -14,12 +14,20 @@ export const tail = list => cdr(list);
 
 export const isEmpty = list => list === null;
 
+export const isList = list => {
+	if (isEmpty(list)) return true;
+	if (typeof(list) === 'function') return true;
+	return false
+};
+
 export const toString = (list) => {
 	const recc = (myList) => {
 		if (isEmpty(myList)) return '';
 		else {
 			const comma = isEmpty(tail(myList)) ? '' : ', ';
-			return head(myList) + comma + recc(tail(myList));
+			const headOfList = head(myList);
+			const headString = isList(headOfList) ? toString(headOfList) : headOfList;
+			return headString + comma + recc(tail(myList));
 		}
 	}
 	return '(' + recc(list) + ')';
